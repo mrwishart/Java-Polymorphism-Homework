@@ -1,8 +1,11 @@
 package AbstractClasses;
 
-public abstract class Attraction {
+import Interfaces.IReviewed;
+
+public abstract class Attraction implements IReviewed {
 
     private String name;
+    private int rating;
 
     public Attraction(String name) {
         this.name = name;
@@ -16,5 +19,7 @@ public abstract class Attraction {
         this.name = name;
     }
 
-
+    public int getRating() {
+        return rating;
+    }
 }
