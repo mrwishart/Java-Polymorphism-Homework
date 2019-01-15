@@ -9,7 +9,7 @@ public class TobaccoStall extends Stall implements ISecurity {
     private int minimumAge;
 
     public TobaccoStall(String name, String ownerName, int parkingSpot) {
-        super(name, ownerName, parkingSpot);
+        super(name, ownerName, parkingSpot, 6.60);
         minimumAge = 18;
     }
 

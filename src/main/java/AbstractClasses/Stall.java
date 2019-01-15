@@ -1,16 +1,20 @@
 package AbstractClasses;
 
 import Interfaces.IReviewed;
+import Interfaces.ITicketed;
+import People.Visitor;
 
-public abstract class Stall implements IReviewed {
+public abstract class Stall implements IReviewed, ITicketed {
 
     private String name, ownerName;
     private int parkingSpot, rating, minimumRating, maximumRating;
+    private double defaultPrice;
 
-    public Stall(String name, String ownerName, int parkingSpot) {
+    public Stall(String name, String ownerName, int parkingSpot, double defaultPrice) {
         this.name = name;
         this.ownerName = ownerName;
         this.parkingSpot = parkingSpot;
+        this.defaultPrice = defaultPrice;
         this.rating = -1;
         this.minimumRating = 0;
         this.maximumRating = 10;
@@ -52,5 +56,13 @@ public abstract class Stall implements IReviewed {
 
     private boolean isRatingValid(int rating){
         return (rating >= minimumRating && rating <= maximumRating);
+    }
+
+    public double defaultPrice() {
+        return defaultPrice;
+    }
+
+    public double priceFor(Visitor visitor) {
+        return defaultPrice();
     }
 }
