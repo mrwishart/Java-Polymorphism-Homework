@@ -25,4 +25,31 @@ public class AttractionTest {
         dodgems.setName("Randy");
         assertEquals("Randy", dodgems.getName());
     }
+
+    @Test
+    public void initialRatingNegative1(){
+        assertEquals(-1, dodgems.getRating());
+    }
+
+    @Test
+    public void setRating() {
+        dodgems.setRating(5);
+        assertEquals(5, dodgems.getRating());
+    }
+
+    @Test
+    public void cantSetRatingBelowZero(){
+        dodgems.setRating(5);
+        assertEquals(5, dodgems.getRating());
+        dodgems.setRating(-1);
+        assertEquals(5, dodgems.getRating());
+    }
+
+    @Test
+    public void cantSetRatingAboveTen(){
+        dodgems.setRating(5);
+        assertEquals(5, dodgems.getRating());
+        dodgems.setRating(11);
+        assertEquals(5, dodgems.getRating());
+    }
 }

@@ -47,4 +47,31 @@ public class StallTest {
         candyFlossStall.setParkingSpot(25);
         assertEquals(25, candyFlossStall.getParkingSpot());
     }
+
+    @Test
+    public void initialRatingNegative1(){
+        assertEquals(-1, candyFlossStall.getRating());
+    }
+
+    @Test
+    public void setRating() {
+        candyFlossStall.setRating(5);
+        assertEquals(5, candyFlossStall.getRating());
+    }
+
+    @Test
+    public void cantSetRatingBelowZero(){
+        candyFlossStall.setRating(5);
+        assertEquals(5, candyFlossStall.getRating());
+        candyFlossStall.setRating(-1);
+        assertEquals(5, candyFlossStall.getRating());
+    }
+
+    @Test
+    public void cantSetRatingAboveTen(){
+        candyFlossStall.setRating(5);
+        assertEquals(5, candyFlossStall.getRating());
+        candyFlossStall.setRating(11);
+        assertEquals(5, candyFlossStall.getRating());
+    }
 }
